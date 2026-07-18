@@ -17,17 +17,15 @@ background:#ffffff;
 padding-bottom:30px;
 }
 
-/* BAGIAN ATAS DENGAN BANNER */
 .bagian-atas{
 position:relative;
 width:100%;
-height:180px; /* Tinggi pas untuk banner */
+height:180px;
 overflow:hidden;
 background:linear-gradient(to bottom, rgba(0, 74, 159, 0.65), rgba(51, 153, 255, 0.65));
 z-index:1;
 }
 
-/* BANNER PAS DI BELAKANG, TIDAK PENUH LAYAR */
 .banner{
 position:absolute;
 top:0;
@@ -35,6 +33,13 @@ left:0;
 width:100%;
 height:100%;
 z-index:0;
+/* ANIMASI GERAK LAMBAT OTOMATIS */
+animation: gerakBanner 8s infinite ease-in-out alternate;
+}
+
+@keyframes gerakBanner{
+0%{transform:scale(1) translateX(0);}
+100%{transform:scale(1.1) translateX(-5px);}
 }
 
 .banner img{
@@ -125,9 +130,9 @@ transition:all 0.2s ease;
 </head>
 <body>
 
-<!-- TULISAN PROMO SUDAH DIHAPUS -->
 <div class="bagian-atas">
 <div class="banner">
+<!-- Simpan gambarmu dengan nama ini: banner-promo.gif / atau banner-promo.jpg -->
 <img src="banner-promo.gif" alt="Banner Promo">
 </div>
 </div>
