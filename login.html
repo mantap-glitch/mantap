@@ -9,7 +9,8 @@
 html, body{
 width:100%;
 height:100%;
-background:linear-gradient(rgba(0, 40, 90, 0.60), rgba(0, 90, 180, 0.60)), url("bg-login.jpg");
+/* LATAR BELAKANG SANGAT JELAS: lapisan biru sangat tipis */
+background:linear-gradient(rgba(0, 40, 90, 0.35), rgba(0, 90, 180, 0.35)), url("bg-login.jpg");
 background-size: cover;
 background-position: center center;
 background-repeat: no-repeat;
@@ -30,13 +31,13 @@ text-align:center;
 margin:15px;
 }
 
-.judul{font-size:24px;font-weight:bold;color:#ffffff;margin-bottom:8px;}
-.sub-judul{font-size:14px;color:#e0eaff;margin-bottom:25px;line-height:1.4;}
+.judul{font-size:24px;font-weight:bold;color:#ffffff;margin-bottom:8px;text-shadow:0 1px 3px rgba(0,0,0,0.3);}
+.sub-judul{font-size:14px;color:#f0f7ff;margin-bottom:25px;line-height:1.4;text-shadow:0 1px 2px rgba(0,0,0,0.2);}
 
 .form-group{text-align:left;margin-bottom:18px;}
 .baris-label{display:flex;gap:10px;margin-bottom:6px;}
-.label-negara{width:95px;font-size:14px;font-weight:bold;color:#ffffff;}
-.label-nomor{flex:1;font-size:14px;font-weight:bold;color:#ffffff;}
+.label-negara{width:95px;font-size:14px;font-weight:bold;color:#ffffff;text-shadow:0 1px 2px rgba(0,0,0,0.2);}
+.label-nomor{flex:1;font-size:14px;font-weight:bold;color:#ffffff;text-shadow:0 1px 2px rgba(0,0,0,0.2);}
 
 .kolom-nomor{display:flex;gap:10px;}
 .pilih-negara{
@@ -54,20 +55,20 @@ transition:0.2s;background:#ffffff;color:#000000;
 
 .teks-syarat{
 font-size:12px;color:#ffffff;line-height:1.5;text-align:center;margin-bottom:12px;
-opacity:0.95;
+opacity:0.98;text-shadow:0 1px 2px rgba(0,0,0,0.2);
 }
 
 .tombol-kirim-otp, .tombol-verifikasi{
 display:block;width:100%;padding:15px;font-size:18px;font-weight:bold;color:#fff;border:none;
 border-radius:50px;background:linear-gradient(90deg, #004a9f, #007bff, #004a9f);
-box-shadow:0 6px 20px rgba(0,91,191,0.4);margin-bottom:10px;transition:all 0.2s ease;cursor:pointer;
+box-shadow:0 6px 20px rgba(0,0,0,0.3);margin-bottom:10px;transition:all 0.2s ease;cursor:pointer;
 background-size:200% 100%;animation: gerakTombol 3s linear infinite;
 }
 @keyframes gerakTombol{0%{background-position:0 0;}100%{background-position:200% 0;}}
 .tombol-kirim-otp:active, .tombol-verifikasi:active{transform:scale(0.96);}
 
 .bagian-otp{display:none;}
-.catatan{font-size:13px;color:#ffffff;margin-top:6px;font-weight:500;}
+.catatan{font-size:13px;color:#ffffff;margin-top:6px;font-weight:500;text-shadow:0 1px 2px rgba(0,0,0,0.2);}
 
 @media(max-width:480px){
 .judul{font-size:20px;}
@@ -139,4 +140,4 @@ window.location.href = 'isi-nomor-' + pilih + 'jt.html';
 </script>
 
 </body>
-</html>
+  </html>
