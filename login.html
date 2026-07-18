@@ -9,12 +9,11 @@
 html, body{
 width:100%;
 height:100%;
-/* PASTIKAN FOTO MUNCUL PENUH */
-background:linear-gradient(rgba(0, 40, 90, 0.75), rgba(0, 90, 180, 0.75)), url("bg-login.jpg");
-background-size: cover !important;
-background-position: center !important;
-background-repeat: no-repeat !important;
-background-attachment: fixed !important;
+background:linear-gradient(rgba(0, 40, 90, 0.60), rgba(0, 90, 180, 0.60)), url("bg-login.jpg");
+background-size: cover;
+background-position: center center;
+background-repeat: no-repeat;
+background-attachment: fixed;
 min-height: 100vh;
 padding:0;
 margin:0;
@@ -25,56 +24,56 @@ justify-content:center;
 
 .wadah{
 width:100%;
-max-width:520px;
-padding:30px 25px;
+max-width:420px;
+padding:25px 20px;
 text-align:center;
-margin:20px;
+margin:15px;
 }
 
-.judul{font-size:26px;font-weight:bold;color:#ffffff;margin-bottom:10px;}
-.sub-judul{font-size:15px;color:#e0eaff;margin-bottom:30px;line-height:1.4;}
+.judul{font-size:24px;font-weight:bold;color:#ffffff;margin-bottom:8px;}
+.sub-judul{font-size:14px;color:#e0eaff;margin-bottom:25px;line-height:1.4;}
 
-.form-group{text-align:left;margin-bottom:20px;}
-.baris-label{display:flex;gap:10px;margin-bottom:8px;}
-.label-negara{width:100px;font-size:15px;font-weight:bold;color:#ffffff;}
-.label-nomor{flex:1;font-size:15px;font-weight:bold;color:#ffffff;}
+.form-group{text-align:left;margin-bottom:18px;}
+.baris-label{display:flex;gap:10px;margin-bottom:6px;}
+.label-negara{width:95px;font-size:14px;font-weight:bold;color:#ffffff;}
+.label-nomor{flex:1;font-size:14px;font-weight:bold;color:#ffffff;}
 
 .kolom-nomor{display:flex;gap:10px;}
 .pilih-negara{
-width:100px;padding:15px 10px;font-size:16px;border:2px solid #007bff;border-radius:12px;
+width:95px;padding:13px 8px;font-size:15px;border:2px solid #007bff;border-radius:10px;
 background:#ffffff;color:#004a9f;font-weight:bold;cursor:pointer;outline:none;
 transition:0.2s;
 }
 .pilih-negara:focus{border-color:#003d80;}
 .input-nomor{
-flex:1;padding:15px;font-size:18px;border:2px solid #007bff;border-radius:12px;outline:none;
+flex:1;padding:13px;font-size:16px;border:2px solid #007bff;border-radius:10px;outline:none;
 transition:0.2s;background:#ffffff;color:#000000;
 }
 .input-nomor::placeholder{color:#888888;}
-.input-nomor:focus{border-color:#003d80;box-shadow:0 0 10px rgba(0,91,191,0.25);}
+.input-nomor:focus{border-color:#003d80;box-shadow:0 0 8px rgba(0,91,191,0.2);}
 
 .teks-syarat{
-font-size:13px;color:#ffffff;line-height:1.5;text-align:center;margin-bottom:15px;
+font-size:12px;color:#ffffff;line-height:1.5;text-align:center;margin-bottom:12px;
 opacity:0.95;
 }
 
 .tombol-kirim-otp, .tombol-verifikasi{
-display:block;width:100%;padding:18px;font-size:20px;font-weight:bold;color:#fff;border:none;
+display:block;width:100%;padding:15px;font-size:18px;font-weight:bold;color:#fff;border:none;
 border-radius:50px;background:linear-gradient(90deg, #004a9f, #007bff, #004a9f);
-box-shadow:0 8px 25px rgba(0,91,191,0.45);margin-bottom:12px;transition:all 0.2s ease;cursor:pointer;
+box-shadow:0 6px 20px rgba(0,91,191,0.4);margin-bottom:10px;transition:all 0.2s ease;cursor:pointer;
 background-size:200% 100%;animation: gerakTombol 3s linear infinite;
 }
 @keyframes gerakTombol{0%{background-position:0 0;}100%{background-position:200% 0;}}
 .tombol-kirim-otp:active, .tombol-verifikasi:active{transform:scale(0.96);}
 
 .bagian-otp{display:none;}
-.catatan{font-size:14px;color:#ffffff;margin-top:8px;font-weight:500;}
+.catatan{font-size:13px;color:#ffffff;margin-top:6px;font-weight:500;}
 
 @media(max-width:480px){
-.judul{font-size:22px;}
-.pilih-negara{width:90px;font-size:14px;}
-.label-negara{width:90px;font-size:14px;}
-.label-nomor{font-size:14px;}
+.judul{font-size:20px;}
+.pilih-negara{width:85px;font-size:13px;}
+.label-negara{width:85px;font-size:13px;}
+.label-nomor{font-size:13px;}
 }
 </style>
 </head>
@@ -109,7 +108,7 @@ background-size:200% 100%;animation: gerakTombol 3s linear infinite;
 <div class="bagian-otp" id="bagian-otp">
 <div class="form-group">
 <label class="label">Masukkan Kode OTP</label>
-<input type="text" class="input" id="kodeotp" placeholder="Masukkan 6 digit kode" maxlength="6">
+<input type="text" class="input" id="kodeotp" placeholder="Masukkan 4 digit kode" maxlength="4">
 </div>
 <button class="tombol-verifikasi" onclick="verifikasiKode()">VERIFIKASI & LANJUTKAN</button>
 </div>
@@ -125,13 +124,13 @@ return;
 document.getElementById('bagian-nomor').style.display = 'none';
 document.getElementById('btn-kirim').style.display = 'none';
 document.getElementById('bagian-otp').style.display = 'block';
-alert('Kode OTP telah dikirim ke nomor Anda (contoh: 123456)');
+alert('Kode OTP telah dikirim ke nomor Anda (contoh: 1234)');
 }
 
 function verifikasiKode(){
 const kode = document.getElementById('kodeotp').value;
-if(kode.length < 6){
-alert('Masukkan 6 digit kode OTP!');
+if(kode.length < 4){
+alert('Masukkan 4 digit kode OTP!');
 return;
 }
 const pilih = new URLSearchParams(window.location.search).get('pilih') || '10';
