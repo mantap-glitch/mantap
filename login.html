@@ -9,12 +9,13 @@
 html, body{
 width:100%;
 height:100%;
-/* FOTO KAMU SEBAGAI LATAR BELAKANG + LAPISAN BIRU TRANSPARAN AGAR TULISAN JELAS */
-background:linear-gradient(rgba(0, 74, 159, 0.75), rgba(51, 153, 255, 0.75)), url("bg-login.jpg");
-background-size:cover;
-background-position:center;
-background-repeat:no-repeat;
-background-attachment:fixed;
+/* PASTIKAN FOTO MUNCUL PENUH */
+background:linear-gradient(rgba(0, 40, 90, 0.75), rgba(0, 90, 180, 0.75)), url("bg-login.jpg");
+background-size: cover !important;
+background-position: center !important;
+background-repeat: no-repeat !important;
+background-attachment: fixed !important;
+min-height: 100vh;
 padding:0;
 margin:0;
 display:flex;
@@ -22,52 +23,86 @@ align-items:center;
 justify-content:center;
 }
 
-.kotak-login{
-width:100%;max-width:500px;background:#fff;border-radius:25px;padding:30px 25px;
-box-shadow:0 10px 30px rgba(0,0,0,0.3);text-align:center;margin:20px;
+.wadah{
+width:100%;
+max-width:520px;
+padding:30px 25px;
+text-align:center;
+margin:20px;
 }
 
-.logo{
-width:120px;
-height:auto;
-margin:0 auto 20px;
-display:block;
-}
+.judul{font-size:26px;font-weight:bold;color:#ffffff;margin-bottom:10px;}
+.sub-judul{font-size:15px;color:#e0eaff;margin-bottom:30px;line-height:1.4;}
 
-.judul{font-size:24px;font-weight:bold;color:#004a9f;margin-bottom:25px;}
-.form-group{text-align:left;margin-bottom:18px;}
-.label{display:block;font-size:16px;font-weight:bold;color:#004a9f;margin-bottom:8px;}
-.input{width:100%;padding:15px;font-size:18px;border:2px solid #007bff;border-radius:12px;outline:none;transition:0.2s;}
-.input:focus{border-color:#004a9f;box-shadow:0 0 8px rgba(0,91,191,0.3);}
+.form-group{text-align:left;margin-bottom:20px;}
+.baris-label{display:flex;gap:10px;margin-bottom:8px;}
+.label-negara{width:100px;font-size:15px;font-weight:bold;color:#ffffff;}
+.label-nomor{flex:1;font-size:15px;font-weight:bold;color:#ffffff;}
+
+.kolom-nomor{display:flex;gap:10px;}
+.pilih-negara{
+width:100px;padding:15px 10px;font-size:16px;border:2px solid #007bff;border-radius:12px;
+background:#ffffff;color:#004a9f;font-weight:bold;cursor:pointer;outline:none;
+transition:0.2s;
+}
+.pilih-negara:focus{border-color:#003d80;}
+.input-nomor{
+flex:1;padding:15px;font-size:18px;border:2px solid #007bff;border-radius:12px;outline:none;
+transition:0.2s;background:#ffffff;color:#000000;
+}
+.input-nomor::placeholder{color:#888888;}
+.input-nomor:focus{border-color:#003d80;box-shadow:0 0 10px rgba(0,91,191,0.25);}
+
+.teks-syarat{
+font-size:13px;color:#ffffff;line-height:1.5;text-align:center;margin-bottom:15px;
+opacity:0.95;
+}
 
 .tombol-kirim-otp, .tombol-verifikasi{
 display:block;width:100%;padding:18px;font-size:20px;font-weight:bold;color:#fff;border:none;
-border-radius:50px;background:linear-gradient(#007bff,#004a9f);box-shadow:0 5px 15px rgba(0,91,191,0.4);
-margin-bottom:12px;transition:all 0.2s ease;cursor:pointer;
+border-radius:50px;background:linear-gradient(90deg, #004a9f, #007bff, #004a9f);
+box-shadow:0 8px 25px rgba(0,91,191,0.45);margin-bottom:12px;transition:all 0.2s ease;cursor:pointer;
+background-size:200% 100%;animation: gerakTombol 3s linear infinite;
 }
+@keyframes gerakTombol{0%{background-position:0 0;}100%{background-position:200% 0;}}
 .tombol-kirim-otp:active, .tombol-verifikasi:active{transform:scale(0.96);}
 
 .bagian-otp{display:none;}
-.catatan{font-size:13px;color:#666;margin-top:5px;}
+.catatan{font-size:14px;color:#ffffff;margin-top:8px;font-weight:500;}
 
 @media(max-width:480px){
-.judul{font-size:20px;}
-.logo{width:100px;}
+.judul{font-size:22px;}
+.pilih-negara{width:90px;font-size:14px;}
+.label-negara{width:90px;font-size:14px;}
+.label-nomor{font-size:14px;}
 }
 </style>
 </head>
 <body>
 
-<div class="kotak-login">
-<img src="logo.png" alt="Logo" class="logo">
-
-<div class="judul">MASUK DENGAN NOMOR HP</div>
+<div class="wadah">
+<div class="judul">MASUK KE AKUN</div>
+<div class="sub-judul">Masukkan nomor HP Anda untuk mendapatkan kode verifikasi</div>
 
 <div class="form-group" id="bagian-nomor">
-<label class="label">Nomor HP Aktif</label>
-<input type="tel" class="input" id="nohp" placeholder="Contoh: 081234567890" maxlength="14">
-<p class="catatan">* Kode verifikasi akan dikirim ke nomor ini</p>
+<div class="baris-label">
+<span class="label-negara">Negara</span>
+<span class="label-nomor">Nomor</span>
 </div>
+<div class="kolom-nomor">
+<select class="pilih-negara">
+<option value="+62">🇮🇩 +62</option>
+<option value="+60">🇲🇾 +60</option>
+<option value="+65">🇸🇬 +65</option>
+<option value="+66">🇹🇭 +66</option>
+<option value="+84">🇻🇳 +84</option>
+</select>
+<input type="tel" class="input-nomor" id="nohp" placeholder="812 3456 7890" maxlength="12">
+</div>
+<p class="catatan">Nomor Sudah Tidak Aktif?</p>
+</div>
+
+<p class="teks-syarat">Kamu akan menggunakan nomor Hp Sebagai ID kamu dan untuk mengamankan Akun kamu. Dengan melanjutkan, kamu juga setuju dengan S&K serta kebijakan privasi kami.</p>
 
 <button class="tombol-kirim-otp" id="btn-kirim" onclick="kirimOTP()">KIRIM KODE OTP</button>
 
@@ -83,7 +118,7 @@ margin-bottom:12px;transition:all 0.2s ease;cursor:pointer;
 <script>
 function kirimOTP(){
 const nohp = document.getElementById('nohp').value;
-if(nohp.length < 10){
+if(nohp.length < 9){
 alert('Masukkan nomor HP yang benar!');
 return;
 }
@@ -105,4 +140,4 @@ window.location.href = 'isi-nomor-' + pilih + 'jt.html';
 </script>
 
 </body>
-  </html>
+</html>
